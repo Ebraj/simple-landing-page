@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Akira Super';
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Extra Useful Classes */
+.container-1000 {
+    padding: 0 20px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.filler {
+    height: 100px;
+    width: 100%;
+}

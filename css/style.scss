@@ -1,0 +1,153 @@
+// Some colors used
+$primary-bg-color:#12151a;
+$primary-text-color:#fff;
+$secondary-text-color:rgb(134, 134, 134);
+
+
+// Working on the basic styling
+body{
+    background-color: $primary-bg-color;
+    color: $primary-text-color;
+}
+p{
+    font-size: clamp(1.05rem,calc(1.05rem+1vw),1.15rem);
+    font-weight: 600;
+    line-height: 1.65;
+    // font-family: 'IBM Plex Sans';
+    // text-transform: uppercase;
+}
+h1{
+    padding-bottom: 1.5rem;
+    font-size: clamp(3.5rem,calc(3.455rem+1vw),4rem);
+}
+// Woring on the .flex-container
+.flex-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #fff;
+}
+
+// Working on the grid container
+.grid-container-1{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(6,100px);
+
+    @media screen and (max-width:528px){
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content min-content 300px;
+    }
+    div.first-div-1{
+        grid-row: 1/2;
+        grid-column: 1/2;
+        writing-mode: vertical-lr;
+        @media screen and (max-width:528px){
+            grid-row: 1/2;
+            grid-column: 1/2;
+            padding: 20px 0;
+        }
+    }
+    div.first-div-2{
+        grid-column: 1/3;
+        grid-row: 3/4;
+        z-index: 1;
+        @media screen and (max-width:528px){
+            grid-column: 1/2;
+            grid-row: 2/3;
+            padding: 20px 0;
+        }
+    }
+    div.first-div-3{
+        grid-column: 2/5;
+        grid-row: 2/6;
+        overflow: hidden;
+        @media screen and (max-width:528px){
+            grid-column: 1/2;
+            grid-row: 3/4;
+            padding: 20px 0;
+        }
+    }
+}
+.grid-container-2{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(6,100px);
+    @media screen and (max-width:618px){
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2,min-content) 300px;
+    }
+
+    div.second-div-1{
+        grid-row: 1/2;
+        grid-column: 4/5;
+        writing-mode: vertical-rl;
+        @media screen and (max-width:618px){
+            grid-row: 1/2;
+            grid-column: 1/2;
+            padding: 20px 0;
+        }        
+    }
+    div.second-div-2{
+        grid-column: 3/5;
+        grid-row: 3/4;
+        z-index: 1;
+        @media screen and (max-width:618px){
+            grid-row: 2/3;
+            grid-column: 1/2;
+            padding: 20px 0;
+        }    
+    }
+    div.second-div-3{
+        grid-column: 1/4;
+        grid-row: 2/6;
+        overflow: hidden;
+        @media screen and (max-width:618px){
+            grid-row: 3/4;
+            grid-column: 1/2;
+            padding: 20px 0;
+        }    
+    }
+}
+.flex-container-footer{
+    border-top: 1px solid #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+// Some extra classes 
+.text-stroke{
+    -webkit-text-stroke: 0.65px #fff;
+    color: transparent;
+    // text-orientation: upright;
+}
+.img-sizer{
+        filter: grayscale(0%);
+        transition: all 0.75s ease-in-out;
+
+        // &:hover{
+        //     filter: grayscale(100%);
+        // }
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+}
+.circle{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: rgb(161, 210, 255);
+    position: relative;
+
+    &::after{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(255, 39, 129);
+        border-radius: 50%;
+        transform: translate(10px);
+    }
+}
